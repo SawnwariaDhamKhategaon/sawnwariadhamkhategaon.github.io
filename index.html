@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>साँवरिया धाम कॉलोनी — खातेगांव, देवास</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700;900&family=Noto+Sans+Devanagari:wght@300;400;500;600&family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --gold:#D4A843;
+  --gold-light:#F0C965;
+  --gold-dark:#A07830;
+  --cream:#F5F0E8;
+  --cream-dark:#EDE5D4;
+  --brown:#4A2C0A;
+  --brown-deep:#2C1A06;
+  --green:#1B4332;
+  --green-mid:#2D6A4F;
+  --green-light:#40916C;
+  --text:#1A1008;
+  --text-muted:#6B4E2A;
+  --white:#FFFFFF;
+  --surface:rgba(255,255,255,0.85);
+  --shadow:0 8px 40px rgba(27,67,50,0.15);
+  --shadow-lg:0 20px 60px rgba(27,67,50,0.2);
+  --radius:16px;
+  --radius-sm:10px;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans Devanagari','Inter',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ========= LANG SWITCHER — inside navbar ========= */
+.lang-bar{
+  display:flex;gap:0;
+  background:rgba(255,255,255,.1);
+  border-radius:8px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.15);
+  flex-shrink:0;
+}
+.lang-btn{
+  border:none;cursor:pointer;padding:7px 16px;
+  font-size:12px;font-weight:600;letter-spacing:.5px;
+  transition:all .2s;background:transparent;color:rgba(255,255,255,.55);
+}
+.lang-btn.active{background:var(--gold);color:var(--brown-deep);}
+.lang-btn:hover:not(.active){color:var(--white);}
+
+/* ========= NAVBAR ========= */
+nav.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:70px;
+  background:rgba(27,67,50,.97);
+  backdrop-filter:blur(14px);
+  box-shadow:0 2px 24px rgba(0,0,0,.28);
+  transition:background .3s;
+  gap:16px;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;
+}
+.nav-logo-icon{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.nav-logo-text{font-family:'Noto Serif Devanagari',serif;font-size:18px;font-weight:700;color:var(--white);line-height:1.2;}
+.nav-logo-text small{display:block;font-size:11px;color:var(--gold-light);font-weight:400;font-family:'Inter',sans-serif;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{
+  color:rgba(255,255,255,.78);text-decoration:none;
+  font-size:14px;font-weight:500;letter-spacing:.3px;
+  transition:color .2s;padding:4px 0;
+  border-bottom:2px solid transparent;
+}
+.nav-links a:hover{color:var(--gold-light);border-bottom-color:var(--gold-light);}
+.nav-cta{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:var(--brown-deep)!important;border-radius:8px;
+  padding:9px 22px!important;border-bottom:none!important;
+  font-weight:700!important;font-size:13px!important;
+  box-shadow:0 3px 12px rgba(201,168,76,.35);
+  transition:transform .2s,box-shadow .2s!important;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.5)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+.hamburger span{width:24px;height:2px;background:white;border-radius:2px;transition:.3s;}
+@media(max-width:900px){
+  .nav-links{display:none;position:fixed;top:70px;left:0;right:0;
+    background:rgba(27,67,50,.98);flex-direction:column;padding:20px;gap:0;
+    border-bottom:2px solid var(--gold);}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:14px 10px;border-bottom:1px solid rgba(255,255,255,.08);width:100%;}
+  .hamburger{display:flex;}
+  nav.navbar{padding:0 16px;gap:10px;}
+  .lang-bar{margin-left:auto;}
+}
+
+/* ========= HERO ========= */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(160deg, var(--green) 0%, #1e5c40 40%, #2d7a52 80%, var(--brown) 100%);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:120px 20px 80px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-block;background:rgba(201,168,76,.18);
+  border:1px solid rgba(201,168,76,.45);
+  color:var(--gold-light);padding:6px 20px;border-radius:40px;
+  font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:28px;font-family:'Inter',sans-serif;
+}
+.hero h1{
+  font-family:'Noto Serif Devanagari',serif;
+  font-size:clamp(38px,7vw,80px);font-weight:900;
+  color:var(--white);line-height:1.1;margin-bottom:16px;
+  text-shadow:0 4px 30px rgba(0,0,0,.4);
+}
+.hero-tagline{
+  font-family:'Noto Serif Devanagari',serif;
+  font-size:clamp(16px,3vw,24px);
+  color:var(--gold-light);font-style:italic;font-weight:400;
+  margin-bottom:24px;opacity:.92;
+}
+.hero-desc{
+  font-size:16px;color:rgba(255,255,255,.72);
+  max-width:520px;margin:0 auto 40px;line-height:1.7;
+}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 32px;border-radius:10px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  border:none;cursor:pointer;transition:all .25s;letter-spacing:.3px;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold-dark));
+  color:var(--brown-deep);
+  box-shadow:0 5px 20px rgba(201,168,76,.4);
+}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(201,168,76,.55);}
+.btn-outline{
+  background:transparent;color:var(--white);
+  border:2px solid rgba(255,255,255,.5);
+}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:white;}
+.hero-stats{
+  display:flex;gap:0;justify-content:center;margin-top:60px;
+  border-top:1px solid rgba(255,255,255,.12);padding-top:40px;flex-wrap:wrap;
+}
+.stat{padding:10px 32px;border-right:1px solid rgba(255,255,255,.12);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold-light);}
+.stat-label{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.5px;margin-top:2px;}
+@media(max-width:600px){.stat{padding:10px 18px;}}
+
+/* ========= SECTIONS ========= */
+.section{padding:80px 20px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-eyebrow{
+  text-align:center;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold-dark);font-weight:600;font-family:'Inter',sans-serif;
+  margin-bottom:12px;
+}
+.section-title{
+  text-align:center;
+  font-family:'Noto Serif Devanagari',serif;
+  font-size:clamp(26px,4vw,42px);font-weight:700;
+  color:var(--brown-deep);margin-bottom:16px;
+}
+.section-divider{
+  width:64px;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));
+  margin:0 auto 48px;border-radius:2px;
+}
+
+/* ========= ABOUT ========= */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;
+}
+.about-text p{font-size:16px;line-height:1.85;color:#4A3220;margin-bottom:18px;}
+.about-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+.badge{
+  padding:8px 18px;border-radius:30px;font-size:13px;font-weight:600;
+  background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.08));
+  color:var(--brown);border:1px solid rgba(201,168,76,.35);
+}
+.about-card{
+  background:linear-gradient(135deg,var(--green),var(--green-mid));
+  border-radius:20px;padding:40px;color:white;
+  box-shadow:var(--shadow-lg);
+  position:relative;overflow:hidden;
+}
+.about-card::before{
+  content:'🏡';position:absolute;right:-10px;bottom:-15px;
+  font-size:100px;opacity:.08;
+}
+.about-card h3{font-family:'Noto Serif Devanagari',serif;font-size:22px;margin-bottom:20px;color:var(--gold-light);}
+.about-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.about-card li{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,.85);}
+.about-card li::before{content:'✦';color:var(--gold);font-size:12px;flex-shrink:0;}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
+
+/* ========= REEL / VIDEO ========= */
+.reel-section{background:var(--cream-dark);}
+.reel-wrap{
+  display:flex;justify-content:center;
+  border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.reel-wrap iframe{display:block;max-width:100%;border-radius:20px;}
+
+/* ========= FEATURES ========= */
+.features-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;
+}
+.feat-card{
+  background:var(--white);border-radius:var(--radius);
+  padding:32px 24px;text-align:center;
+  box-shadow:0 2px 16px rgba(60,30,10,.07);
+  border:1px solid rgba(201,168,76,.15);
+  transition:transform .25s,box-shadow .25s;
+}
+.feat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+.feat-icon{font-size:38px;margin-bottom:16px;}
+.feat-card h4{
+  font-family:'Noto Serif Devanagari',serif;
+  font-size:17px;color:var(--brown-deep);margin-bottom:10px;font-weight:700;
+}
+.feat-card p{font-size:13px;color:var(--text-muted);line-height:1.6;}
+
+/* ========= GALLERY ========= */
+.gallery-section{background:var(--cream-dark);}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.gal-item{
+  border-radius:14px;overflow:hidden;
+  background:linear-gradient(135deg,var(--brown),var(--brown-deep));
+  aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;color:white;cursor:pointer;
+  box-shadow:0 4px 16px rgba(60,30,10,.12);
+  transition:transform .25s,box-shadow .25s;
+  position:relative;
+  font-size:15px;font-weight:600;text-align:center;padding:20px;
+}
+.gal-item:hover{transform:scale(1.03);box-shadow:var(--shadow);}
+.gal-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.gal-placeholder-icon{font-size:36px;margin-bottom:8px;opacity:.7;}
+.gal-placeholder-text{font-size:13px;opacity:.65;margin-top:4px;}
+.gallery-note{
+  margin-top:24px;padding:20px 28px;
+  background:var(--white);border-radius:12px;
+  border-left:4px solid var(--gold);
+  font-size:14px;color:var(--text-muted);
+  box-shadow:0 2px 12px rgba(60,30,10,.06);
+}
+@media(max-width:700px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.gallery-grid{grid-template-columns:1fr;}}
+
+/* ========= MAP ========= */
+.map-section{}
+.map-address{
+  display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;
+}
+.addr-card{
+  background:var(--white);border-radius:var(--radius);padding:28px;
+  box-shadow:0 2px 14px rgba(60,30,10,.07);
+  border:1px solid rgba(201,168,76,.15);
+}
+.addr-card h4{
+  font-family:'Noto Serif Devanagari',serif;
+  color:var(--gold-dark);font-size:16px;margin-bottom:14px;
+}
+.addr-card p{font-size:15px;line-height:1.8;color:var(--text);}
+.addr-card .highlight{color:var(--brown-deep);font-weight:600;}
+.map-frame{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);}
+.map-frame iframe{display:block;width:100%;height:450px;border:0;}
+@media(max-width:700px){.map-address{grid-template-columns:1fr;}.map-frame iframe{height:300px;}}
+
+/* ========= CONTACT ========= */
+.contact-section{background:linear-gradient(135deg,var(--green) 0%,#163d28 100%);}
+.contact-section .section-title{color:var(--white);}
+.contact-section .section-eyebrow{color:var(--gold-light);}
+.contact-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;
+  margin-bottom:40px;
+}
+.con-card{
+  background:rgba(255,255,255,.07);border-radius:var(--radius);
+  padding:32px;text-align:center;border:1px solid rgba(201,168,76,.2);
+  transition:background .2s,transform .2s;
+}
+.con-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px);}
+.con-icon{font-size:36px;margin-bottom:14px;}
+.con-card h3{color:var(--gold-light);font-size:17px;margin-bottom:10px;font-family:'Noto Serif Devanagari',serif;}
+.con-num{font-size:22px;font-weight:700;color:white;letter-spacing:1px;margin:8px 0;}
+.con-card p{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:18px;}
+.btn-call{
+  display:inline-block;padding:11px 28px;background:var(--gold);color:var(--brown-deep);
+  border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;
+  transition:background .2s,transform .2s;
+}
+.btn-call:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* ========= FEEDBACK ========= */
+.feedback-section{background:var(--cream-dark);}
+.feedback-form{
+  max-width:640px;margin:0 auto;
+  background:var(--white);border-radius:20px;
+  padding:48px 44px;box-shadow:var(--shadow-lg);
+  border:1px solid rgba(201,168,76,.2);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.form-group{margin-bottom:20px;}
+.form-group label{
+  display:block;font-size:13px;font-weight:600;color:var(--brown);
+  margin-bottom:7px;letter-spacing:.3px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;padding:12px 16px;
+  border:1.5px solid rgba(201,168,76,.3);border-radius:10px;
+  background:var(--cream);color:var(--text);
+  font-size:14px;font-family:inherit;
+  transition:border-color .2s,box-shadow .2s;
+  outline:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(201,168,76,.15);
+}
+.form-group textarea{resize:vertical;min-height:110px;}
+.rating-group{display:flex;gap:8px;justify-content:center;margin:8px 0;}
+.star-btn{
+  background:none;border:none;font-size:30px;cursor:pointer;
+  color:#ccc;transition:color .15s,transform .15s;padding:4px;
+}
+.star-btn.active,.star-btn:hover{color:var(--gold);transform:scale(1.1);}
+.btn-submit{
+  width:100%;padding:15px;background:linear-gradient(135deg,var(--brown),var(--brown-deep));
+  color:white;border:none;border-radius:10px;font-size:16px;font-weight:700;
+  cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit;
+  letter-spacing:.3px;
+}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(60,30,10,.3);}
+.form-success{
+  display:none;text-align:center;padding:40px 20px;
+}
+.form-success .tick{font-size:56px;margin-bottom:16px;}
+.form-success h3{font-family:'Noto Serif Devanagari',serif;color:var(--brown-deep);font-size:22px;margin-bottom:10px;}
+.form-success p{color:var(--text-muted);font-size:15px;}
+@media(max-width:560px){
+  .form-row{grid-template-columns:1fr;}
+  .feedback-form{padding:32px 22px;}
+}
+
+/* ========= FOOTER ========= */
+footer{
+  background:linear-gradient(135deg,#111f16 0%,var(--green) 100%);color:rgba(255,255,255,.65);
+  padding:48px 20px 28px;text-align:center;
+}
+.footer-logo{
+  font-family:'Noto Serif Devanagari',serif;
+  font-size:24px;font-weight:700;color:white;margin-bottom:6px;
+}
+.footer-logo span{color:var(--gold-light);}
+.footer-sub{font-size:13px;margin-bottom:28px;opacity:.6;}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+.footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s;}
+.footer-links a:hover{color:var(--gold-light);}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin-bottom:20px;}
+.footer-bottom{font-size:12px;opacity:.45;}
+
+/* ========= SCROLL TOP ========= */
+.scroll-top{
+  position:fixed;bottom:28px;right:28px;z-index:888;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--gold);color:var(--brown-deep);
+  border:none;cursor:pointer;font-size:20px;
+  box-shadow:0 4px 16px rgba(201,168,76,.5);
+  display:none;align-items:center;justify-content:center;
+  transition:transform .2s;
+}
+.scroll-top:hover{transform:scale(1.1);}
+.scroll-top.visible{display:flex;}
+
+/* ========= TRANSLATION CLASSES ========= */
+[data-en]{} /* JS handles visibility */
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🏡</div>
+    <div class="nav-logo-text">
+      <span data-hi="साँवरिया धाम" data-en="Sawnwaria Dham">साँवरिया धाम</span>
+      <small data-hi="कॉलोनी, खातेगांव" data-en="Colony, Khategaon">कॉलोनी, खातेगांव</small>
+    </div>
+  </a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="#about" data-hi="हमारे बारे में" data-en="About Us">हमारे बारे में</a>
+    <a href="#reel" data-hi="वीडियो" data-en="Video">वीडियो</a>
+    <a href="#gallery" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+    <a href="#location" data-hi="स्थान" data-en="Location">स्थान</a>
+    <a href="#feedback" data-hi="समीक्षा" data-en="Review">समीक्षा</a>
+    <a href="#contact" class="nav-cta" data-hi="📞 संपर्क करें" data-en="📞 Contact">📞 संपर्क करें</a>
+  </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('hi')" id="btn-hi">हिंदी</button>
+    <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-badge" data-hi="TNCP & RERA APPROVED PROJECT" data-en="TNCP & RERA APPROVED PROJECT">TNCP & RERA APPROVED PROJECT</div>
+    <h1 data-hi="साँवरिया धाम कॉलोनी" data-en="Sawnwaria Dham Colony">साँवरिया धाम कॉलोनी</h1>
+    <p class="hero-tagline" data-hi="अपने सपनों का आशियाना..." data-en="Your Dream Home Awaits...">अपने सपनों का आशियाना...</p>
+    <p class="hero-desc" data-hi="श्री विद्यासागर पब्लिक स्कूल के ठीक सामने, तिवड़िया रोड़ पर हरियाली और सुरम्य वातावरण के बीच अपना सपनों का आशियाना बनाएं।" data-en="Right in front of Shri Vidyasagar Public School on Tiwariya Road — build your dream home amidst greenery and a serene environment.">श्री विद्यासागर पब्लिक स्कूल के ठीक सामने, तिवड़िया रोड़ पर हरियाली और सुरम्य वातावरण के बीच अपना सपनों का आशियाना बनाएं।</p>
+    <div class="hero-btns">
+      <a href="tel:9926274406" class="btn btn-gold" data-hi="📞 अभी कॉल करें" data-en="📞 Call Now">📞 अभी कॉल करें</a>
+      <a href="#about" class="btn btn-outline" data-hi="और जानें →" data-en="Learn More →">और जानें →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" data-hi="TNCP" data-en="TNCP">TNCP</div>
+        <div class="stat-label" data-hi="अनुमोदित" data-en="Approved">अनुमोदित</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-hi="RERA" data-en="RERA">RERA</div>
+        <div class="stat-label" data-hi="पंजीकृत" data-en="Registered">पंजीकृत</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">24-25</div>
+        <div class="stat-label" data-hi="जनवरी शुभारम्भ" data-en="Jan Launch">जनवरी शुभारम्भ</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">देवास</div>
+        <div class="stat-label" data-hi="जिला, म.प्र." data-en="District, M.P.">जिला, म.प्र.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-hi="परियोजना परिचय" data-en="About The Project">परियोजना परिचय</p>
+    <h2 class="section-title" data-hi="साँवरिया धाम कॉलोनी के बारे में" data-en="About Sawnwaria Dham Colony">साँवरिया धाम कॉलोनी के बारे में</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p data-hi="साँवरिया धाम कॉलोनी के आवासीय भूखंडों को मिल रहा है बेहतरीन प्रतिसाद। तिवड़िया रोड़ पर स्थित इस कॉलोनी की शानदार लोकेशन — श्री विद्यासागर पब्लिक स्कूल के ठीक सामने — इसे खातेगांव का सबसे प्रतिष्ठित आवासीय विकल्प बनाती है।" data-en="Sawnwaria Dham Colony's residential plots are receiving excellent response. Located on Tiwariya Road, right in front of Shri Vidyasagar Public School — this prime location makes it Khategaon's most prestigious residential choice.">साँवरिया धाम कॉलोनी के आवासीय भूखंडों को मिल रहा है बेहतरीन प्रतिसाद। तिवड़िया रोड़ पर स्थित इस कॉलोनी की शानदार लोकेशन — श्री विद्यासागर पब्लिक स्कूल के ठीक सामने — इसे खातेगांव का सबसे प्रतिष्ठित आवासीय विकल्प बनाती है।</p>
+        <p data-hi="हरियाली और सुरम्य वातावरण के बीच बसी यह कॉलोनी TNCP व RERA द्वारा अनुमोदित है। उपलब्ध प्लॉट साइज़: 20×40, 15×60, 15×45, 15×50 — अपनी जरूरत के अनुसार चुनें।" data-en="Set amidst greenery and a serene environment, this colony is approved by TNCP and RERA. Available plot sizes: 20×40, 15×60, 15×45, 15×50 — choose as per your need.">हरियाली और सुरम्य वातावरण के बीच बसी यह कॉलोनी TNCP व RERA द्वारा अनुमोदित है। उपलब्ध प्लॉट साइज़: 20×40, 15×60, 15×45, 15×50 — अपनी जरूरत के अनुसार चुनें।</p>
+        <div class="about-badges">
+          <span class="badge">✅ TNCP Approved</span>
+          <span class="badge">✅ RERA Registered</span>
+          <span class="badge">🏗️ New Launch</span>
+          <span class="badge">📍 Khategaon, Dewas</span>
+        </div>
+      </div>
+      <div class="about-card">
+        <h3 data-hi="मुख्य सुविधाएं" data-en="Key Highlights">मुख्य सुविधाएं</h3>
+        <ul>
+          <li data-hi="4 ट्रांसफार्मर — बिजली की पूर्ण व्यवस्था" data-en="4 Transformers — complete electricity supply">4 ट्रांसफार्मर — बिजली की पूर्ण व्यवस्था</li>
+          <li data-hi="2 बोरिंग + 1.5 लाख लीटर वाटर टैंक" data-en="2 Borings + 1.5 Lakh Litre Water Tank">2 बोरिंग + 1.5 लाख लीटर वाटर टैंक</li>
+          <li data-hi="हर घर के सामने पानी कनेक्शन" data-en="Water connection in front of every house">हर घर के सामने पानी कनेक्शन</li>
+          <li data-hi="ड्रेनेज सिस्टम व चौड़ी पक्की सड़कें" data-en="Drainage system and wide paved roads">ड्रेनेज सिस्टम व चौड़ी पक्की सड़कें</li>
+          <li data-hi="2 हरे-भरे उद्यान (गार्डन)" data-en="2 lush green gardens">2 हरे-भरे उद्यान (गार्डन)</li>
+          <li data-hi="निकट में मंदिर व रेस्तरां" data-en="Temple and restaurant nearby">निकट में मंदिर व रेस्तरां</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REEL / FB POST -->
+<section class="section reel-section" id="reel">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-hi="सोशल मीडिया" data-en="Social Media">सोशल मीडिया</p>
+    <h2 class="section-title" data-hi="हमारा शुभारम्भ वीडियो" data-en="Our Launch Reel">हमारा शुभारम्भ वीडियो</h2>
+    <div class="section-divider"></div>
+    <div class="reel-wrap">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fnarayan.ujjainiya.5%2Fposts%2Fpfbid0E5BD42EoQfAJ45eSBvVfYSNGuR5C2gSSg6zKMDHhNkSq4AQSCRxfLBChQCd2N4jKl&show_text=true&width=500" width="500" height="320" style="border:none;overflow:hidden;border-radius:16px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-hi="क्यों चुनें हमें" data-en="Why Choose Us">क्यों चुनें हमें</p>
+    <h2 class="section-title" data-hi="परियोजना की विशेषताएं" data-en="Project Features">परियोजना की विशेषताएं</h2>
+    <div class="section-divider"></div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">⛩️</div>
+        <h4 data-hi="कॉलोनी में मंदिर" data-en="Temple Inside Colony">कॉलोनी में मंदिर</h4>
+        <p data-hi="कॉलोनी के भीतर ही मंदिर की सुविधा — धार्मिक और आध्यात्मिक वातावरण में जीवन जिएं।" data-en="Temple facility within the colony itself — live life in a religious and spiritual environment.">कॉलोनी के भीतर ही मंदिर की सुविधा — धार्मिक और आध्यात्मिक वातावरण में जीवन जिएं।</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🛣️</div>
+        <h4 data-hi="चौड़ी पक्की सड़कें" data-en="Wide Paved Roads">चौड़ी पक्की सड़कें</h4>
+        <p data-hi="कॉलोनी के अंदर चौड़ी और पक्की सड़कें — आवागमन सुगम और सुरक्षित।" data-en="Wide and paved roads inside the colony — smooth and safe commute.">कॉलोनी के अंदर चौड़ी और पक्की सड़कें — आवागमन सुगम और सुरक्षित।</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">✅</div>
+        <h4 data-hi="TNCP & RERA" data-en="TNCP & RERA">TNCP & RERA</h4>
+        <p data-hi="सरकार द्वारा पूर्णतः अनुमोदित एवं पंजीकृत परियोजना — 100% कानूनी और सुरक्षित।" data-en="Fully government approved and registered project — 100% legal and safe.">सरकार द्वारा पूर्णतः अनुमोदित एवं पंजीकृत परियोजना — 100% कानूनी और सुरक्षित।</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💧</div>
+        <h4 data-hi="पानी की पूर्ण व्यवस्था" data-en="Complete Water Supply">पानी की पूर्ण व्यवस्था</h4>
+        <p data-hi="2 बोरिंग + 1.5 लाख लीटर टैंक + हर घर के सामने कनेक्शन — पानी की कोई दिक्कत नहीं।" data-en="2 Borings + 1.5 Lakh litre tank + connection to every house — no water issues.">2 बोरिंग + 1.5 लाख लीटर टैंक + हर घर के सामने कनेक्शन — पानी की कोई दिक्कत नहीं।</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🌳</div>
+        <h4 data-hi="2 हरे-भरे उद्यान" data-en="2 Lush Gardens">2 हरे-भरे उद्यान</h4>
+        <p data-hi="दो खूबसूरत पार्क और हरियाली से भरे उद्यान — परिवार के लिए सुकून का स्थान।" data-en="Two beautiful parks and lush gardens — a peaceful place for the family.">दो खूबसूरत पार्क और हरियाली से भरे उद्यान — परिवार के लिए सुकून का स्थान।</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎓</div>
+        <h4 data-hi="विद्यासागर स्कूल सामने" data-en="Vidyasagar School Opposite">विद्यासागर स्कूल सामने</h4>
+        <p data-hi="शहर की प्रमुख शैक्षणिक संस्था श्री विद्यासागर पब्लिक स्कूल ठीक सामने — बच्चों की पढ़ाई निश्चिंत।" data-en="Shri Vidyasagar Public School, city's top institution, right opposite — children's education ensured.">शहर की प्रमुख शैक्षणिक संस्था श्री विद्यासागर पब्लिक स्कूल ठीक सामने — बच्चों की पढ़ाई निश्चिंत।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="gallery">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-hi="फोटो गैलरी" data-en="Photo Gallery">फोटो गैलरी</p>
+    <h2 class="section-title" data-hi="कॉलोनी की झलकियां" data-en="Colony Glimpses">कॉलोनी की झलकियां</h2>
+    <div class="section-divider"></div>
+    <div class="gallery-grid">
+      <div class="gal-item">
+        <div class="gal-placeholder-icon">🏢</div>
+        <div data-hi="आवासीय भवन" data-en="Residential Blocks">आवासीय भवन</div>
+        <div class="gal-placeholder-text" data-hi="तस्वीर जल्द जोड़ी जाएगी" data-en="Image coming soon">तस्वीर जल्द जोड़ी जाएगी</div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder-icon">🌳</div>
+        <div data-hi="हरियाली क्षेत्र" data-en="Green Zone">हरियाली क्षेत्र</div>
+        <div class="gal-placeholder-text" data-hi="तस्वीर जल्द जोड़ी जाएगी" data-en="Image coming soon">तस्वीर जल्द जोड़ी जाएगी</div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder-icon">🏗️</div>
+        <div data-hi="निर्माण कार्य" data-en="Construction Work">निर्माण कार्य</div>
+        <div class="gal-placeholder-text" data-hi="तस्वीर जल्द जोड़ी जाएगी" data-en="Image coming soon">तस्वीर जल्द जोड़ी जाएगी</div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder-icon">🛣️</div>
+        <div data-hi="सड़क नेटवर्क" data-en="Road Network">सड़क नेटवर्क</div>
+        <div class="gal-placeholder-text" data-hi="तस्वीर जल्द जोड़ी जाएगी" data-en="Image coming soon">तस्वीर जल्द जोड़ी जाएगी</div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder-icon">🏛️</div>
+        <div data-hi="सामुदायिक क्षेत्र" data-en="Community Area">सामुदायिक क्षेत्र</div>
+        <div class="gal-placeholder-text" data-hi="तस्वीर जल्द जोड़ी जाएगी" data-en="Image coming soon">तस्वीर जल्द जोड़ी जाएगी</div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder-icon">📐</div>
+        <div data-hi="मास्टर प्लान" data-en="Master Plan">मास्टर प्लान</div>
+        <div class="gal-placeholder-text" data-hi="तस्वीर जल्द जोड़ी जाएगी" data-en="Image coming soon">तस्वीर जल्द जोड़ी जाएगी</div>
+      </div>
+    </div>
+    <div class="gallery-note">
+      <strong>📸 <span data-hi="गैलरी अपडेट:" data-en="Update Gallery:">गैलरी अपडेट:</span></strong>
+      <span data-hi=" कॉलोनी की असली तस्वीरें जोड़ने के लिए नीचे दिए गए नंबर पर संपर्क करें। हम शीघ्र गैलरी को अपडेट करेंगे।" data-en=" To add real colony photos, contact on the numbers below. We will update the gallery soon."> कॉलोनी की असली तस्वीरें जोड़ने के लिए नीचे दिए गए नंबर पर संपर्क करें। हम शीघ्र गैलरी को अपडेट करेंगे।</span>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section" id="location">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-hi="हमारा स्थान" data-en="Our Location">हमारा स्थान</p>
+    <h2 class="section-title" data-hi="कॉलोनी का पता" data-en="Colony Address">कॉलोनी का पता</h2>
+    <div class="section-divider"></div>
+    <div class="map-address">
+      <div class="addr-card">
+        <h4>📍 <span data-hi="पूरा पता" data-en="Full Address">पूरा पता</span></h4>
+        <p>
+          <span class="highlight" data-hi="साँवरिया धाम कॉलोनी" data-en="Sawnwaria Dham Colony">साँवरिया धाम कॉलोनी</span><br>
+          <span data-hi="तिवड़िया रोड़" data-en="Tiwariya Road">तिवड़िया रोड़</span><br>
+          <span data-hi="खातेगांव, जिला देवास" data-en="Khategaon, District Dewas">खातेगांव, जिला देवास</span><br>
+          <span data-hi="मध्य प्रदेश — 451446" data-en="Madhya Pradesh — 451446">मध्य प्रदेश — 451446</span>
+        </p>
+      </div>
+      <div class="addr-card">
+        <h4>🗺️ <span data-hi="कैसे पहुंचें" data-en="How to Reach">कैसे पहुंचें</span></h4>
+        <p data-hi="कॉलोनी आने के लिए तिवड़िया रोड़ पर आएं — वहाँ श्री विद्यासागर पब्लिक स्कूल के ठीक आगे साँवरिया धाम कॉलोनी दिख जाएगी।" data-en="To reach the colony, take Tiwariya Road — Sawnwaria Dham Colony is right in front of Shri Vidyasagar Public School, clearly visible.">कॉलोनी आने के लिए तिवड़िया रोड़ पर आएं — वहाँ श्री विद्यासागर पब्लिक स्कूल के ठीक आगे साँवरिया धाम कॉलोनी दिख जाएगी।</p>
+      </div>
+    </div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1517.7791374200362!2d76.92011003244902!3d22.600276567928884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397d11004351a64d%3A0xb39d705a3e9c06ae!2sSavariya%20dham%20colony!5e1!3m2!1sen!2sin!4v1784477758598!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-hi="बात करें हमसे" data-en="Get In Touch">बात करें हमसे</p>
+    <h2 class="section-title" data-hi="संपर्क करें" data-en="Contact Us">संपर्क करें</h2>
+    <div class="section-divider" style="background:linear-gradient(90deg,var(--gold-light),var(--gold-dark));"></div>
+    <div class="contact-cards">
+      <div class="con-card">
+        <div class="con-icon">📞</div>
+        <h3 data-hi="संपर्क नंबर 1" data-en="Contact Number 1">संपर्क नंबर 1</h3>
+        <div class="con-num">9926274406</div>
+        <p data-hi="अधिक जानकारी के लिए कॉल करें" data-en="Call for more information">अधिक जानकारी के लिए कॉल करें</p>
+        <a href="tel:9926274406" class="btn-call" data-hi="📞 कॉल करें" data-en="📞 Call Now">📞 कॉल करें</a>
+      </div>
+      <div class="con-card">
+        <div class="con-icon">📱</div>
+        <h3 data-hi="संपर्क नंबर 2" data-en="Contact Number 2">संपर्क नंबर 2</h3>
+        <div class="con-num">8120989348</div>
+        <p data-hi="अधिक जानकारी के लिए कॉल करें" data-en="Call for more information">अधिक जानकारी के लिए कॉल करें</p>
+        <a href="tel:8120989348" class="btn-call" data-hi="📞 कॉल करें" data-en="📞 Call Now">📞 कॉल करें</a>
+      </div>
+      <div class="con-card">
+        <div class="con-icon">📍</div>
+        <h3 data-hi="हमारा पता" data-en="Our Address">हमारा पता</h3>
+        <div class="con-num" style="font-size:16px;line-height:1.5;">
+          <span data-hi="तिवड़िया रोड़, खातेगांव" data-en="Tiwariya Road, Khategaon">तिवड़िया रोड़, खातेगांव</span>
+        </div>
+        <p data-hi="देवास जिला, मध्य प्रदेश" data-en="Dewas District, Madhya Pradesh">देवास जिला, मध्य प्रदेश</p>
+        <a href="#location" class="btn-call" data-hi="🗺️ नक्शा देखें" data-en="🗺️ View Map">🗺️ नक्शा देखें</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK / REVIEW -->
+<section class="section feedback-section" id="feedback">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-hi="आपकी राय" data-en="Your Review">आपकी राय</p>
+    <h2 class="section-title" data-hi="Google पर समीक्षा दें" data-en="Leave a Google Review">Google पर समीक्षा दें</h2>
+    <div class="section-divider"></div>
+    <div class="feedback-form" style="text-align:center;">
+      <div style="font-size:56px;margin-bottom:20px;">⭐</div>
+      <h3 style="font-family:'Noto Serif Devanagari',serif;color:var(--brown-deep);font-size:22px;margin-bottom:14px;" data-hi="हमारे बारे में अपना अनुभव साझा करें" data-en="Share your experience with us">हमारे बारे में अपना अनुभव साझा करें</h3>
+      <p style="color:var(--text-muted);font-size:15px;line-height:1.7;max-width:420px;margin:0 auto 30px;" data-hi="क्या आप साँवरिया धाम कॉलोनी के बारे में जानते हैं या आपने हमारी कॉलोनी देखी है? Google Maps पर अपनी समीक्षा दें और दूसरों की मदद करें।" data-en="Do you know about Sawnwaria Dham Colony or have you visited us? Leave your review on Google Maps and help others.">क्या आप साँवरिया धाम कॉलोनी के बारे में जानते हैं या आपने हमारी कॉलोनी देखी है? Google Maps पर अपनी समीक्षा दें और दूसरों की मदद करें।</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://www.google.com/maps/place/Savariya+dham+colony/@22.600276,76.9201,17z" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:15px;padding:15px 36px;" data-hi="⭐ Google पर Review दें" data-en="⭐ Write a Google Review">⭐ Google पर Review दें</a>
+        <a href="#contact" class="btn btn-outline" style="background:transparent;color:var(--brown);border:2px solid var(--gold);font-size:15px;padding:15px 36px;" data-hi="📞 संपर्क करें" data-en="📞 Contact Us">📞 संपर्क करें</a>
+      </div>
+      <div style="margin-top:32px;padding:18px 24px;background:rgba(201,168,76,.1);border-radius:12px;border:1px solid rgba(201,168,76,.3);">
+        <p style="font-size:13px;color:var(--text-muted);" data-hi="📍 Google Maps पर 'Savariya Dham Colony, Khategaon' खोजें और ⭐⭐⭐⭐⭐ रेटिंग दें।" data-en="📍 Search 'Savariya Dham Colony, Khategaon' on Google Maps and give ⭐⭐⭐⭐⭐ rating.">📍 Google Maps पर 'Savariya Dham Colony, Khategaon' खोजें और ⭐⭐⭐⭐⭐ रेटिंग दें।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">साँवरिया <span>धाम</span> कॉलोनी</div>
+  <div class="footer-sub" data-hi="खातेगांव, देवास (म.प्र.) | TNCP & RERA Approved" data-en="Khategaon, Dewas (M.P.) | TNCP & RERA Approved">खातेगांव, देवास (म.प्र.) | TNCP & RERA Approved</div>
+  <div class="footer-links">
+    <a href="#about" data-hi="हमारे बारे में" data-en="About Us">हमारे बारे में</a>
+    <a href="#gallery" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
+    <a href="#location" data-hi="स्थान" data-en="Location">स्थान</a>
+    <a href="#contact" data-hi="संपर्क" data-en="Contact">संपर्क</a>
+    <a href="#feedback" data-hi="प्रतिक्रिया" data-en="Feedback">प्रतिक्रिया</a>
+  </div>
+  <hr class="footer-divider"/>
+  <div class="footer-bottom">© 2025 साँवरिया धाम कॉलोनी — सर्वाधिकार सुरक्षित</div>
+</footer>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ---- LANGUAGE SYSTEM ----
+let currentLang = 'hi';
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-hi]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + lang) || el.textContent;
+  });
+  // placeholders
+  document.querySelectorAll('[placeholder]').forEach(el => {
+    if(lang === 'en') {
+      if(el.id==='f-name') el.placeholder='e.g. Ram Sharma';
+      if(el.id==='f-phone') el.placeholder='9XXXXXXXXX';
+      if(el.id==='f-city') el.placeholder='e.g. Khategaon / Dewas / Indore';
+      if(el.id==='f-msg') el.placeholder='Write here...';
+    } else {
+      if(el.id==='f-name') el.placeholder='जैसे: राम शर्मा';
+      if(el.id==='f-phone') el.placeholder='9XXXXXXXXX';
+      if(el.id==='f-city') el.placeholder='जैसे: खातेगांव / देवास / इंदौर';
+      if(el.id==='f-msg') el.placeholder='यहाँ लिखें...';
+    }
+    // select options
+    document.querySelectorAll('option[data-hi]').forEach(opt => {
+      opt.textContent = opt.getAttribute('data-' + lang);
+    });
+  });
+  document.getElementById('btn-hi').classList.toggle('active', lang==='hi');
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.documentElement.lang = lang === 'hi' ? 'hi' : 'en';
+}
+
+// ---- STAR RATING ----
+let rating = 0;
+function setRating(val) {
+  rating = val;
+  document.querySelectorAll('.star-btn').forEach((btn,i) => {
+    btn.classList.toggle('active', i < val);
+  });
+}
+
+// ---- FEEDBACK SUBMIT ----
+function submitFeedback() {
+  const name = document.getElementById('f-name').value.trim();
+  if (!name) {
+    alert(currentLang === 'hi' ? 'कृपया अपना नाम दर्ज करें।' : 'Please enter your name.');
+    return;
+  }
+  document.getElementById('feedback-fields').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
+// ---- NAVBAR MENU ----
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+// close menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'));
+});
+
+// ---- SCROLL TOP BUTTON ----
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTop');
+  btn.classList.toggle('visible', window.scrollY > 400);
+});
+
+// ---- NAVBAR SHADOW ON SCROLL ----
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').style.boxShadow =
+    window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,.35)' : '0 2px 20px rgba(0,0,0,.25)';
+});
+</script>
+</body>
+</html>
